@@ -22,12 +22,10 @@ var connector = new builder.ChatConnector({
     appId: process.env.MICROSOFT_APP_ID,
     appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
-console.log("server1")
 // Listen for messages from users 
 server.post('/api/messages', connector.listen());
-console.log("server2")
 // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
 var bot = new builder.UniversalBot(connector, function (session) {
     session.send("You said: %s", session.message.text);
 });
-console.log("server3")
+console.log('process.env.MICROSOFT_APP_ID:%s process.env.MICROSOFT_APP_PASSWORD:%s', process.env.MICROSOFT_APP_ID, process.env.MICROSOFT_APP_PASSWORD)
