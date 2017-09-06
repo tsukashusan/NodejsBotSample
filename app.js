@@ -14,7 +14,7 @@ console.log(process.env.port)
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 1337, function () {
     //console.log('%s listening to %s', server.name, server.url);
-    console.log('listening to server.port:%s server.PORT', server.port, server.connections)
+    console.log('listening to server.name:%s server.url:%s', server.name, server.url)
 });
 
 // Create chat connector for communicating with the Bot Framework Service
