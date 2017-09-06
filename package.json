@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-bot-sample",
+  "version": "0.0.0",
+  "description": "NodejsBotSample",
+  "main": "app.js",
+  "author": {
+    "name": "shtsukam"
+  },
+  "dependencies": {
+    "botbuilder": "^3.9.1",
+    "dotenv": "^4.0.0",
+    "restify": "^5.2.0"
+  }
+}
