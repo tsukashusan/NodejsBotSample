@@ -1,5 +1,7 @@
 var restify = require('restify');
 var builder = require('botbuilder');
+var cognitiveservices = require('botbuilder-cognitiveservices');
+
 
 // load config from.env
 require('dotenv').config();
