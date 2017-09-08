@@ -40,8 +40,8 @@ var bot = new builder.UniversalBot(connector);
 //=========================================================
 
 var recognizer = new cognitiveservices.QnAMakerRecognizer({
-    knowledgeBaseId: 'b559177f-4cb0-436a-a551-7f45ed70975f', 
-    subscriptionKey: 'ce4ad1b5ff78444089afad374c2a13cf'});
+    knowledgeBaseId: '', 
+    subscriptionKey: ''});
 
 var basicQnAMakerDialog = new cognitiveservices.QnAMakerDialog({
     recognizers: [recognizer],
