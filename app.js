@@ -26,7 +26,25 @@ var connector = new builder.ChatConnector({
 server.post('/api/messages', connector.listen());
 
 // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
-var bot = new builder.UniversalBot(connector, function (session) {
-    console.log("You said: %s", session.message.text);
-    session.send("貴方の会話: %s", session.message.text);
+//var bot = new builder.UniversalBot(connector, function (session) {
+//    console.log("You said: %s", session.message.text);
+//    session.send("貴方の会話: %s", session.message.text);
+//});
+var bot = new builder.UniversalBot(connector);
+
+//
+//=========================================================
+// Bots Dialogs
+//=========================================================
+
+var recognizer = new cognitiveservices.QnAMakerRecognizer({
+    knowledgeBaseId: 'b559177f-4cb0-436a-a551-7f45ed70975f', 
+    subscriptionKey: 'ce4ad1b5ff78444089afad374c2a13cf'});
+
+var basicQnAMakerDialog = new cognitiveservices.QnAMakerDialog({
+    recognizers: [recognizer],
+    defaultMessage: 'No match! Try changing the query terms!',
+    qnaThreshold: 0.3
 });
+
+bot.dialog('/', basicQnAMakerDialog);
