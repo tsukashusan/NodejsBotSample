@@ -1,4 +1,4 @@
-# CSharpBotSample
+# NodejsBotSample
 
 ## Step by Step for getting started.
 1. git clone
