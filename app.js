@@ -9,10 +9,6 @@ require('dotenv').config();
 //console.log(process.env)
 // Setup Restify Server
 
-console.log(process.env.port)
-console.log(process.env.PORT)
-console.log(process.env.port)
-
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 1337, function () {
     //console.log('%s listening to %s', server.name, server.url);
